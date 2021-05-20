@@ -85,13 +85,7 @@ def predict():
         out3=np.append(out2,c)
 
         print(out3)
-
-
-
-
         
-        
-        #X_new = np.fromiter(out3, dtype=float)  # convert input to array
 
 
         out =  model.predict([out3])[0]
@@ -101,25 +95,13 @@ def predict():
         output=round(out,2)
         
 
-        #c = json.dumps(out)
-
-
-        #set(c)
-
-        #return jsonify(c), 201
-        #return jsonify({'Your estimated price is ': c })
-        
-        #return out,200
+       
 
         return render_template('predict.html', title="page", pred='Your estimated price is {} TL.'.format(output))
 
 
     
 
-        
-
-
-#API.add_resource(Predict, '/predict')
 
 if __name__ == '__main__':
     app.run(debug=True, port='1080')
